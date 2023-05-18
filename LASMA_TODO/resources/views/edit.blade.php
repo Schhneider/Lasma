@@ -40,7 +40,10 @@
    if (taskName === '' || endDate === '') {
      event.preventDefault();
      alert('Lūdzu, aizpildiet visus laukus.');
-    } else if (isNaN(year) || isNaN(month) || isNaN(day)) {
+    } else if (taskName.length <= 15) {
+    event.preventDefault();
+    alert('Uzdevuma nosaukumam jābūt garākam par 15 simboliem.');
+    }else if (isNaN(year) || isNaN(month) || isNaN(day)) {
      event.preventDefault();
      alert('Ievadītā datuma formāts nav derīgs.');
    } else if (month > 12 || month < 1 || day > 31 || day < 1) {
